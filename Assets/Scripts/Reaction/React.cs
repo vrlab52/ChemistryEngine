@@ -8,13 +8,17 @@ public class React : MonoBehaviour
     [SerializeField] Material material;
     [SerializeField] MeshRenderer meshRenderer;
     [SerializeField] ChemicalsList chemicalsList;
+
+    public Color color;
     // Start is called before the first frame update
     void Start()
     {
         compositionManager = GetComponent<CompositionManager>();
         chemicalsList = GameObject.FindGameObjectWithTag("ChemicalsList").GetComponent<ChemicalsList>();
         meshRenderer = GetComponent<MeshRenderer>();
-        material = new Material(meshRenderer.material);
+
+        Renderer rend = GetComponent<Renderer>();
+        rend.material = new Material(Shader.Find("Specular"));
     }
 
     // Update is called once per frame
@@ -38,13 +42,18 @@ public class React : MonoBehaviour
             }
         }
 
-        // if (compositionManager.composition["NaOH"] > 0 && compositionManager.composition["Phenolphthalein"] > 0)
+        if (compositionManager.composition["NaOH"] > 0 && compositionManager.composition["Phenolphthalein"] > 0)
         {
+            Debug.Log("NaOH: " + compositionManager.composition["NaOH"]);
+            Debug.Log("Phenolphthalein: " + compositionManager.composition["Phenolphthalein"]);
             // material.CopyPropertiesFromMaterial(meshRenderer.material);
-            material.color = Color.Lerp(chemicalsList.H2OColor, chemicalsList.NaOHPhenolphthalineColor, compositionManager.composition["NaOH"] / compositionManager.volumeOccupied);
-            meshRenderer.material = material;
+            Renderer rend = GetComponent<Renderer>();
+            color = Color.Lerp(chemicalsList.H2OColor, chemicalsList.NaOHPhenolphthalineColor, compositionManager.composition["NaOH"] / compositionManager.volumeOccupied);
+            rend.material.color = color;
         }
 
+
         Debug.Log("% NaOH: " + compositionManager.composition["NaOH"] / compositionManager.volumeOccupied);
+        Debug.Log("% HCl: " + compositionManager.composition["HCl"] / compositionManager.volumeOccupied);
     }
 }

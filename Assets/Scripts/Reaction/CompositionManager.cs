@@ -45,5 +45,6 @@ public class CompositionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Volume Occupied: " + volumeOccupied + " by " + transform.parent.parent.name);
     }
 }

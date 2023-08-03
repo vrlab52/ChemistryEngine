@@ -301,8 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders:
-  - {fileID: 6408274}
+  m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -643,6 +642,10 @@ PrefabInstance:
       propertyPath: numEmitters
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8866441433339431526, guid: 6d9c1dab1421286479f0ed07e13740c5, type: 3}
+      propertyPath: compositionManager
+      value: 
+      objectReference: {fileID: 736877709232305317}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -790,3 +793,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8463079324787513862, guid: 1aff6653e0b714647bf58d181d9c37d9, type: 3}
   m_PrefabInstance: {fileID: 8463079322990049361}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &736877709232305317 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9172442182680284404, guid: 1aff6653e0b714647bf58d181d9c37d9, type: 3}
+  m_PrefabInstance: {fileID: 8463079322990049361}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a5e1de8169c3344ad33eaef075ba67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

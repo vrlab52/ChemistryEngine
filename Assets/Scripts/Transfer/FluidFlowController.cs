@@ -23,6 +23,7 @@ public class FluidFlowController : MonoBehaviour
         GameObject wideCapInstantiated = Instantiate(wideCapEmitter, transform.position, transform.rotation);
         wideCapInstantiated.transform.parent = transform;
         wideCapInstantiated.GetComponent<OverflowDetector>().surface = surface;
+        wideCapInstantiated.GetComponent<ParticleCompositionManager>().compositionManager = compositionManager;
         var ps = wideCapInstantiated.GetComponent<ParticleSystem>();
         var shape = ps.shape;
         shape.radius = radius;
@@ -33,6 +34,7 @@ public class FluidFlowController : MonoBehaviour
             GameObject thinCapInstantiated = Instantiate(thinCapEmitter, transform.position + transform.TransformDirection(pos), transform.rotation);
             thinCapInstantiated.transform.parent = transform;
             thinCapInstantiated.GetComponent<OverflowDetector>().surface = surface;
+            thinCapInstantiated.GetComponent<ParticleCompositionManager>().compositionManager = compositionManager;
         }
 
     }

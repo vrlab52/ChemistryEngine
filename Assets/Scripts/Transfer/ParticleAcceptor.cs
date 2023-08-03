@@ -35,8 +35,29 @@ public class ParticleAcceptor : MonoBehaviour
             {
                 return;
             }
-            compositionManager.AddChemical("H2O", FluidFlowController.dropVolume * numCollisionEvents);
-            Debug.Log(other.transform.Find("Fluid").transform.Find("BaseMesh").GetComponent<CompositionManager>().composition["H2O"]);
+
+            ParticleCompositionManager selfCompositionManager = GetComponent<ParticleCompositionManager>();
+
+            if (selfCompositionManager == null)
+            {
+                return;
+            }
+
+            if (selfCompositionManager.compositionManager == compositionManager)
+            {
+                return;
+            }
+
+            Dictionary<string, float> selfComposition = selfCompositionManager.composition;
+            float volumeOccupied = selfCompositionManager.compositionManager.volumeOccupied;
+            // loop over all chemicals in the fluid
+            foreach (var chemical in selfComposition)
+            {
+                // add the chemical to the particle
+                compositionManager.AddChemical(chemical.Key, FluidFlowController.dropVolume * numCollisionEvents * chemical.Value / volumeOccupied);
+            }
+            // compositionManager.AddChemical("H2O", FluidFlowController.dropVolume * numCollisionEvents);
+            // Debug.Log(other.transform.Find("Fluid").transform.Find("BaseMesh").GetComponent<CompositionManager>().composition["H2O"]);
         }
     }
 }

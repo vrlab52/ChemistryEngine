@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4461836560663085430}
   - component: {fileID: 1028362312}
   - component: {fileID: 6037164079871570802}
+  - component: {fileID: -6192079809463058913}
+  - component: {fileID: -7410849882298541270}
   m_Layer: 0
   m_Name: WideCapParticles
   m_TagString: Untagged
@@ -4858,3 +4860,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: {fileID: 0}
+--- !u!114 &-6192079809463058913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4461836560663085431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7850b05c1e7209b48883aa327b884b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  compositionManager: {fileID: 0}
+--- !u!114 &-7410849882298541270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4461836560663085431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70cc93d727819c9488ed1688377c52b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 0}
+  particleCompositionManager: {fileID: 0}
